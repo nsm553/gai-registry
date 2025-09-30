@@ -1,0 +1,28 @@
+#REST
+###
+
+GET http://127.0.0.1:8000/v1/agents
+
+
+###
+
+POST http://localhost:8000/v1/agents
+content-type: application/json
+
+{
+  "agent_name": "test_agent_1",
+  "workload_name": "workload_A",
+  "environment": "pre-prod",
+  "status": "active",
+  "trust_score": 0.95,
+  "compliance_status": "compliant",
+  "models_in_use": {"model1": "v1"},
+  "mcp_connectivity_status": "connected"
+}
+
+###
+
+GET http://localhost:8000/v1/agents/test_agent_1
+
+###
+

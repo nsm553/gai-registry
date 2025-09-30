@@ -15,7 +15,6 @@ from app.models.all_models import *
 
 
 engine = create_engine(
-    # settings.get_database_url(),
     settings.db_url,
     connect_args={"check_same_thread": False},
     poolclass=StaticPool,
@@ -75,35 +74,4 @@ def client(app: FastAPI, db_session: Session) -> Generator[TestClient, Any, None
     with TestClient(app) as client:
         yield client
 
-
-# def override_get_db():
-#     try:
-#         db = SessionTesting()
-#         yield db
-#     finally:
-#         db.close()
-
-# @pytest.fixture(scope='session')
-# def conf():
-#     # app = create_app(config_object=TestConfig)
-#     with app.app_context():
-#         Base.metadata.create_all()  # Create tables in the in-memory database
-#         yield app
-#         Base.metadata.drop_all()  # Clean up after tests
-
-# @pytest.fixture(scope='function')
-# def client(app):
-#     return app.test_client()
-
-# @pytest.fixture(scope='function')
-# def session(app):
-#     with app.app_context():
-#         connection = db.engine.connect()
-#         transaction = connection.begin()
-#         options = dict(bind=connection, binds={})
-#         session = db.create_scoped_session(options=options)
-#         db.session = session
-#         yield session
-#         transaction.rollback()  # Rollback changes after each test
-#         session.remove()
 

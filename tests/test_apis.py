@@ -5,7 +5,6 @@ def test_database_connection():
       assert os.getenv("DATABASE_URL") == "sqlite:///:memory:"
       assert os.getenv("DEBUG") == "True"
 
-# @pytest.fixture(scope='session')
 def test_create_agent(client):
     print ("------ Testing test_create_agent POST /v1/agents/ -------")
     response = client.post(
@@ -36,7 +35,7 @@ def test_read_agents(client):
     print (f"test_read_agents: ${data}")
     assert isinstance(data, list)
 
-# @pytest.fixture(scope='function')
+
 def test_read_agent(client):
     print ("------ Testing test_read_agent  /v1/agents/agent2-------")
     create_response = client.post(
@@ -63,7 +62,6 @@ def test_read_agent(client):
     assert data["agent_id"] == agent_id
 
 
-# @pytest.fixture(scope='function')
 def test_update_agent(client):
     print ("------ Testing test_update_agent  POST /v1/agents/-------")
     create_response = client.post(
