@@ -1,0 +1,12 @@
+fastapi==0.115.5
+uvicorn==0.24.0.post1
+SQLAlchemy==2.0.37
+psycopg2-binary==2.9.9
+pydantic==2.11.5
+pytest==8.3.4
+asgi_lifespan==2.1.0
+httpx==0.28.1
+pytest-asyncio==1.2.0
+python-dotenv==1.1.0
+pytest-env==1.1.5
+pydantic-settings==2.11.0
