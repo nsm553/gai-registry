@@ -1,5 +1,4 @@
 -- Create the database
-CREATE USER guardu WITH PASSWORD 'gaiDBv25';
 CREATE DATABASE gaidb;
 GRANT ALL PRIVILEGES ON DATABASE gaidb TO guardu;
 -- Use the database
